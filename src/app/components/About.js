@@ -23,7 +23,7 @@ export default function About(){
     const y = useParallax(scrollYProgress, 100)
 
 
-    return (<div className="w-full h-150 flex gap-[20%] mt-30 justify-between select-none">
+    return (<div className="w-full h-150 flex gap-[20%] mt-25 justify-between select-none">
         <motion.div
             style={{ y }}
             ref={ref}
