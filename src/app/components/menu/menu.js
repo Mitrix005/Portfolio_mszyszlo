@@ -10,7 +10,7 @@ export default function Menu(){
         "Moje projekty": "/projects",
         "Kontakt": "/contact"
     }
-    return (<div className="fixed top-18 z-100 w-[calc(100%-5em)] h-max font-[lexend] flex justify-between px-10">
+    return (<div className="sticky mt-5 top-10 z-100 w-full h-max font-[lexend] flex justify-between px-12">
         <div className="w-max h-max flex">
             <p className="text-3xl font-bold">m</p>
             <p className="text-3xl font-light font-">szyszlo</p>

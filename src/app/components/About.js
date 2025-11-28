@@ -29,15 +29,18 @@ export default function About(){
                 style={{ y }}
                 ref={ref}
                 transition={{type: "spring", bounce: 0.5}}
-                className="w-2/5 flex flex-col gap-10">
+                className="w-2/5 flex flex-col gap-8">
                 <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    transition={{type: "spring", duration: 1}}
+                    initial={{opacity: 0, y: 10}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{type: "spring", duration: 1, ease: [0.2, 0.65, 0.3, 0.9]}}
                     className="flex flex-col text-zinc-300">
-                    <h1 className="lg:text-6xl xxl:text-8xl font-black">Lor <br/>Ipsum</h1>
+                    <h1 className="lg:text-6xl font-black">Web <br/>Developer</h1>
                 </motion.div>
-                <div
+                <motion.div
+                    initial={{opacity: 0, y: 10}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{type: "spring", duration: 1, delay: 0.5, ease: [0.2, 0.65, 0.3, 0.9]}}
                     className="flex flex-col gap-1">
                     <div className="flex w-max">
                         <p className="lg:text-2xl xxl:text-4xl text-[#FFE100] font-bold">O mnie</p>
@@ -45,14 +48,14 @@ export default function About(){
                     <div className="w-full">
                         <p className="lg:text-md xxl:text-xl font-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id nisi eget metus ullamcorper auctor ac in neque. Nullam ut elementum quam, at rhoncus eros. Donec ipsum magna, ornare nec massa eu, scelerisque commodo sem. Aliquam eu dui euismod, ultrices ipsum non, vulputate odio. Sed ex sem, consectetur ut consectetur a, rutrum vulputate felis. Pellentesque et orci vel risus pulvinar dapibus at eu metus. Vestibulum id sodales dolor.</p>
                     </div>
-                </div>
+                </motion.div>
             </motion.div>
             <div className="w-1/4 relative h-full min-h-[500px]">
-                <div className="absolute -left-90 top-1/2 -translate-y-1/2 w-[100%] pointer-events-none z-0 scale-120">
+                <div className="absolute -left-[10em] top-1/2 -translate-y-1/2 w-[100%] pointer-events-none z-0 scale-160">
                     <motion.svg
-                        width="335"
-                        height="299"
-                        viewBox="0 0 335 330"
+                        width="1338"
+                        height="803"
+                        viewBox="0 0 1338 815"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-full h-full"
@@ -63,29 +66,29 @@ export default function About(){
                         <motion.path
                             variants={v}
                             stroke="#FFE100"
-                            strokeWidth="25"
+                            strokeWidth="35"
                             strokeLinejoin="round"
                             strokeLinecap="round"
-                            d="M229.928 13.4759C190.928 15.8092 79.9277 11.6168 23.9277 109.217C-32.0723 206.817 150.928 149.883 252.928 109.217C403.928 57.2168 335.528 211.276 205.928 222.476C76.3277 233.676 466.928 287.143 614.928 282.476"
+                            d="M27.9059 789.01C33.9059 772.01 405.906 10.0089 508.906 13.0089C591.306 15.4089 628.239 381.343 614.906 484.01C727.406 353.545 863.373 -22.1418 928.406 96.0089C993.906 215.009 1065.41 702.51 866.406 742.01C536.793 807.435 -91.5941 360.51 27.9059 294.51C167.467 217.43 797.739 412.01 1324.41 420.51"
                         />
                     </motion.svg>
                 </div>
 
-                <motion.div
-                    style={{ y }}
-                    ref={ref}
-                    className="relative z-10 w-full h-full">
-                    <Image
-                        src="/foto.jpg"
-                        alt="Zdjęcie profilowe"
-                        fill
-                        style={{ objectFit: 'cover' }}
-                        className="rounded-3xl drop-shadow-xl"
-                    />
-                </motion.div>
+                {/*<motion.div*/}
+                {/*    style={{ y }}*/}
+                {/*    ref={ref}*/}
+                {/*    className="relative z-10 w-full h-full">*/}
+                {/*    <Image*/}
+                {/*        src="/foto.jpg"*/}
+                {/*        alt="Zdjęcie profilowe"*/}
+                {/*        fill*/}
+                {/*        style={{ objectFit: 'cover' }}*/}
+                {/*        className="rounded-3xl drop-shadow-xl"*/}
+                {/*    />*/}
+                {/*</motion.div>*/}
             </div>
         </div>
-        <div className="absolute bottom-15 left-1/2 -translate-x-1/2 w-auto h-10 flex justify-center items-center">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-auto h-10 flex justify-center items-center">
             <p className="lg:text-xl xxl:text-4xl text-[#FFE100] font-bold">Zjedź w dół</p>
         </div>
 
@@ -94,3 +97,4 @@ export default function About(){
 
 // #FFE100 - żółty
 // #222222 - bg
+
