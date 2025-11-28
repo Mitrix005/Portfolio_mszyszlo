@@ -23,6 +23,7 @@ export default function About(){
     const y = useParallax(scrollYProgress, 50)
 
 
+
     return (<div className="w-full h-[80vh] flex justify-center select-none flex-col">
         <div className="w-full h-max flex justify-between items-center">
             <motion.div
