@@ -14,7 +14,7 @@ export default function Home() {
                 <div className="w-[calc(100vw-6em)] h-[calc(100vh-4em)] -translate-y-[5em] relative">
                     <BackgroundGradientAnimation
                         gradientBackgroundStart="rgb(24, 24, 27)"
-                        gradientBackgroundEnd="rgb(9, 9, 11)"
+                        gradientBackgroundEnd="#24242B"
                         firstColor="120, 119, 198"
                         secondColor="139, 92, 246"
                         thirdColor="59, 130, 246"

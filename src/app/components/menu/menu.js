@@ -3,12 +3,13 @@ import Link from "next/link";
 import {useState} from "react";
 
 export default function Menu(){
-    const [active, setActive] = useState("O mnie");
+    const [active, setActive] = useState("Home");
     const menu_list = {
-        "O mnie": "/about",
-        "Umiejętności": "/skills",
-        "Moje projekty": "/projects",
-        "Kontakt": "/contact"
+        "Home" : "/start",
+        "Skills": "/skills",
+        "Projects": "/projects",
+        "About me": "/about",
+        "Contact": "/contact"
     }
     return (<div className="sticky mt-5 top-10 z-100 w-full h-max font-[lexend] flex justify-between px-12">
         <div className="w-max h-max flex">
