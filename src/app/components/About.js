@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import {motion, useScroll, useTransform} from "motion/react"
 import {useRef} from "react";
 
@@ -21,11 +20,6 @@ export default function About() {
         },
     }
 
-    const v_img = {
-        hidden: {translateY: 0},
-        visible: {translateY: 10},
-    }
-
     function useParallax(value, distance) {
         return useTransform(value, [0, 1], [-distance, distance])
     }
@@ -33,7 +27,6 @@ export default function About() {
     const ref = useRef(null)
     const {scrollYProgress} = useScroll({target: ref})
     const y = useParallax(scrollYProgress, 25)
-
 
     return (<div className="w-full h-[80vh] flex justify-center select-none flex-col">
         <div className="w-full h-max flex justify-between items-center">
@@ -117,9 +110,9 @@ export default function About() {
                 {/*</motion.div>*/}
             </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-auto h-10 flex justify-center items-center">
+        <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-auto h-10 flex justify-center items-center">
             <p className="lg:text-xl xxl:text-4xl text-[#FFE100] font-bold">Scroll down</p>
-        </div>
+        </motion.div>
 
     </div>)
 }

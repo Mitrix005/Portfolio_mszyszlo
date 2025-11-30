@@ -1,16 +1,11 @@
 import {
-    Cookie,
-    Geist,
-    Geist_Mono,
-    Inter,
     Lexend,
-    Nunito,
     Nunito_Sans,
-    Pacifico,
     Poppins,
     Quicksand
 } from "next/font/google";
 import "./globals.css";
+import SmoothScrolling from "@/app/components/functions/SmoothScrolling";
 
 const poppins = Poppins({
     subsets: ['latin', 'latin-ext'],
@@ -28,11 +23,6 @@ const nunitoSans = Nunito_Sans({
     subsets: ["latin"],
 });
 
-const lexand = Lexend({
-    variable: "--font-lexend",
-    subsets: ["latin"],
-});
-
 
 export const metadata = {
   title: "Portfolio - Michał Szyszło",
@@ -45,7 +35,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${quicksand.variable} ${nunitoSans.variable} ${poppins.variable} antialiased`}
       >
-        {children}
+        <SmoothScrolling>
+            {children}
+        </SmoothScrolling>
       </body>
     </html>
   );

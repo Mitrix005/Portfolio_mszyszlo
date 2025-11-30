@@ -3,19 +3,19 @@ import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
-                                                gradientBackgroundStart = "rgb(108, 0, 162)",
-                                                gradientBackgroundEnd = "rgb(0, 17, 82)",
-                                                firstColor = "18, 113, 255",
-                                                secondColor = "221, 74, 255",
-                                                thirdColor = "100, 220, 255",
-                                                fourthColor = "200, 50, 50",
-                                                fifthColor = "180, 180, 50",
-                                                pointerColor = "140, 100, 255",
-                                                size = "80%",
-                                                blendingValue = "hard-light",
+                                                gradientBackgroundStart="rgb(24, 24, 27)",
+                                                gradientBackgroundEnd="#24242B",
+                                                firstColor="120, 119, 198",
+                                                secondColor="139, 92, 246",
+                                                thirdColor="59, 130, 246",
+                                                fourthColor="168, 85, 247",
+                                                fifthColor="99, 102, 241",
+                                                pointerColor="167, 139, 250",
+                                                size="70%",
+                                                blendingValue="screen",
+                                                interactive=true,
                                                 children,
                                                 className,
-                                                interactive = true,
                                                 containerClassName
                                             }) => {
     const interactiveRef = useRef(null);
@@ -81,7 +81,7 @@ export const BackgroundGradientAnimation = ({
             ref={containerRef}
             onMouseMove={interactive ? handleMouseMove : undefined}
             className={cn(
-                "h-full w-full relative rounded-3xl overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
+                "h-full w-full rounded-3xl relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
                 containerClassName
             )}>
             <svg className="hidden">
