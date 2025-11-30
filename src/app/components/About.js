@@ -32,7 +32,7 @@ export default function About() {
 
     const ref = useRef(null)
     const {scrollYProgress} = useScroll({target: ref})
-    const y = useParallax(scrollYProgress, 50)
+    const y = useParallax(scrollYProgress, 25)
 
 
     return (<div className="w-full h-[80vh] flex justify-center select-none flex-col">
@@ -55,15 +55,11 @@ export default function About() {
                     transition={{type: "spring", duration: 1, delay: 0.5, ease: [0.2, 0.65, 0.3, 0.9]}}
                     className="flex flex-col gap-1">
                     <div className="flex w-max">
-                        <p className="lg:text-2xl xxl:text-4xl text-[#FFE100] font-bold">O mnie</p>
+                        <p className="lg:text-2xl xxl:text-4xl text-[#FFE100] font-bold">Short about me</p>
                     </div>
                     <div className="w-full">
-                        <p className="lg:text-md xxl:text-xl font-base">Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Praesent id nisi eget metus ullamcorper auctor ac in neque. Nullam ut
-                            elementum quam, at rhoncus eros. Donec ipsum magna, ornare nec massa eu, scelerisque commodo
-                            sem. Aliquam eu dui euismod, ultrices ipsum non, vulputate odio. Sed ex sem, consectetur ut
-                            consectetur a, rutrum vulputate felis. Pellentesque et orci vel risus pulvinar dapibus at eu
-                            metus. Vestibulum id sodales dolor.</p>
+                        <p className="lg:text-md xxl:text-xl font-base">I am a web developer who likes to combine logic with design.
+                            I create applications that are refined in every detail.</p>
                     </div>
                 </motion.div>
             </motion.div>
@@ -122,7 +118,7 @@ export default function About() {
             </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-auto h-10 flex justify-center items-center">
-            <p className="lg:text-xl xxl:text-4xl text-[#FFE100] font-bold">Zjedź w dół</p>
+            <p className="lg:text-xl xxl:text-4xl text-[#FFE100] font-bold">Scroll down</p>
         </div>
 
     </div>)
