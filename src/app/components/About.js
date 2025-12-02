@@ -1,10 +1,10 @@
 "use client"
 import {motion, useScroll, useTransform} from "motion/react"
-import {useRef} from "react";
+import {useMemo, useRef} from "react";
 
 export default function About() {
-    const v = {
-        hidden: {pathLength: 0, opacity: 0},
+    const v = useMemo(() => ({
+        hidden: { pathLength: 0, opacity: 0 },
         visible: {
             pathLength: 1,
             opacity: 1,
@@ -13,27 +13,23 @@ export default function About() {
                     type: "spring",
                     duration: 2.5,
                     bounce: 0,
-                    // repeat: Infinity,
-                    // repeatType: "reverse"
-                }, opacity: {duration: 0.2}
+                },
+                opacity: { duration: 0.2 }
             }
         },
-    }
+    }), []);
 
-    function useParallax(value, distance) {
-        return useTransform(value, [0, 1], [-distance, distance])
-    }
+    // function useParallax(value, distance) {
+    //     return useTransform(value, [0, 1], [-distance, distance])
+    // }
+    //
+    // const ref = useRef(null)
+    // const {scrollYProgress} = useScroll({target: ref})
+    // const y = useParallax(scrollYProgress, 25)
 
-    const ref = useRef(null)
-    const {scrollYProgress} = useScroll({target: ref})
-    const y = useParallax(scrollYProgress, 25)
-
-    return (<div className="w-full h-[80vh] flex justify-center select-none flex-col">
-        <div className="w-full h-max flex justify-between items-center">
-            <motion.div
-                style={{y}}
-                ref={ref}
-                transition={{type: "spring", bounce: 0.5}}
+    return (<div className="w-full h-full flex justify-center select-none flex-col">
+        <div className="w-full h-full flex justify-between items-center">
+            <div
                 className="w-2/5 flex flex-col gap-8">
                 <motion.div
                     initial={{opacity: 0, y: 10}}
@@ -55,7 +51,7 @@ export default function About() {
                             I create applications that are refined in every detail.</p>
                     </div>
                 </motion.div>
-            </motion.div>
+            </div>
             <div className="w-1/4 relative h-full min-h-[500px]">
                 <div
                     className="absolute -left-[12em] top-1/2 -translate-y-1/2 w-[100%] pointer-events-none z-0 scale-170">
@@ -71,14 +67,6 @@ export default function About() {
                         preserveAspectRatio="xMidYMid meet"
                         transition={{ staggerChildren: 2.2}}
                     >
-                        {/*<motion.path*/}
-                        {/*    variants={v}*/}
-                        {/*    stroke="#FFE100"*/}
-                        {/*    strokeWidth="20"*/}
-                        {/*    strokeLinejoin="round"*/}
-                        {/*    strokeLinecap="round"*/}
-                        {/*    d="M1842.08 341.284C1996.58 327.95 2309.58 353.284 2325.58 561.284C2345.58 821.284 1304.58 932.283 1338.08 235.783C1364.88 -321.417 1237.75 268.784 1165.58 654.284C1160.08 448.617 1148.88 57.1835 1090.08 38.7835C1031.28 20.3835 956.412 655.783 918.579 1005.78C996.412 908.117 1062.08 710.884 822.079 561.284C582.079 411.684 175.412 474.284 2.07861 524.284L1537.76 509.783C1566.26 509.783 1540.32 474.783 1592.26 474.783C1620.76 474.783 1616.76 507.385 1592.26 518.783C1561.09 533.283 1549.09 557.071 1583.26 563.283C1627.26 571.283 1651.26 493.783 1671.26 486.783C1687.26 481.183 1715.26 484.45 1730.76 486.783L1647.26 563.283H1707.76C1728.09 556.45 1768.76 531.583 1768.76 486.783C1768.76 430.783 1769.27 543.783 1797.26 543.783C1829.26 543.783 1842.26 518.783 1834.26 474.783C1844.76 532.283 1859.46 643.183 1834.26 626.783C1840.62 567.925 1865.56 456.366 1914.43 480.996C1942.93 480.996 1938.93 513.597 1914.43 524.996C1883.26 539.496 1871.26 563.283 1905.43 569.496C1949.43 577.496 1973.43 499.996 1993.43 492.996C2009.43 487.396 2037.43 490.662 2052.93 492.996L1969.43 569.496H2029.93C2052.37 561.258 2097.26 533.183 2097.26 486.783C2110.46 407.269 2034.26 491.614 2107.76 574.783C2132.27 577.235 2144.05 581.447 2156.92 574.783M2156.92 574.783C2166.81 569.667 2177.42 565.667 2177.42 536.783C2177.42 507.9 2106.42 505.783 2106.42 536.783C2106.42 558.783 2092.4 581.278 2156.92 574.783Z"*/}
-                        {/*/>*/}
                         <motion.path
                             variants={v}
                             stroke="#FFE100"
@@ -95,19 +83,6 @@ export default function About() {
 
                     </motion.svg>
                 </div>
-
-                {/*<motion.div*/}
-                {/*    style={{ y }}*/}
-                {/*    ref={ref}*/}
-                {/*    className="relative z-10 w-full h-full">*/}
-                {/*    <Image*/}
-                {/*        src="/foto.jpg"*/}
-                {/*        alt="Zdjęcie profilowe"*/}
-                {/*        fill*/}
-                {/*        style={{ objectFit: 'cover' }}*/}
-                {/*        className="rounded-3xl drop-shadow-xl"*/}
-                {/*    />*/}
-                {/*</motion.div>*/}
             </div>
         </div>
         <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-auto h-10 flex justify-center items-center">

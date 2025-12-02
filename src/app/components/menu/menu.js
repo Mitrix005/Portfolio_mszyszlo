@@ -11,7 +11,7 @@ export default function Menu(){
         "About me": "/about",
         "Contact": "/contact"
     }
-    return (<div className="sticky mt-5 top-10 z-100 w-full h-max font-[lexend] flex justify-between px-12">
+    return (<div className="z-100 w-full h-max font-[lexend] flex justify-between px-22">
         <div className="w-max h-max flex">
             <p className="text-3xl font-bold">m</p>
             <p className="text-3xl font-light font-">szyszlo</p>

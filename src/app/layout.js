@@ -23,6 +23,11 @@ const nunitoSans = Nunito_Sans({
     subsets: ["latin"],
 });
 
+const lexend = Lexend({
+    variable: "--font-lexend",
+    subsets: ["latin"],
+});
+
 
 export const metadata = {
   title: "Portfolio - Michał Szyszło",
@@ -33,7 +38,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pl">
       <body
-        className={`${quicksand.variable} ${nunitoSans.variable} ${poppins.variable} antialiased`}
+        className={`${quicksand.variable} ${nunitoSans.variable} ${poppins.variable} ${lexend.variable} antialiased`}
       >
         <SmoothScrolling>
             {children}
