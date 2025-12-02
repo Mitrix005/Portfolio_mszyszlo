@@ -11,17 +11,26 @@ export default function Menu(){
         "About me": "/about",
         "Contact": "/contact"
     }
-    return (<div className="z-100 w-full h-max font-[lexend] flex justify-between px-22">
-        <div className="w-max h-max flex">
-            <p className="text-3xl font-bold">m</p>
-            <p className="text-3xl font-light font-">szyszlo</p>
-        </div>
-        <div className="w-max h-max flex justify-between items-center py-3 px-6 bg-zinc-600/50 backdrop-blur-md rounded-4xl">
-            <div className="w-max h-max font-[quicksand] flex font-light text-md gap-10">
-                {Object.entries(menu_list).map(([key, value]) => {
-                    return (<Link key={value} href={value}><p className={`${key === active ? "text-[#FFE100] font-semibold" : "text-white"}`}>{key}</p></Link>)
-                })}
+    return (
+        <div className="fixed top-5 left-1/2 -translate-x-1/2 z-[100] w-full h-max flex justify-end gap-2 px-22">
+            <div className="w-max h-max flex justify-between items-center py-3 px-6 bg-zinc-700/60 backdrop-blur-md rounded-full border border-zinc-700/50 shadow-lg">
+                <div className="w-max h-max font-[quicksand] flex font-light text-sm gap-6">
+                    {Object.entries(menu_list).map(([key, value]) => {
+                        return (
+                            <Link
+                                key={value}
+                                href={value}
+                                onClick={() => setActive(key)}
+                                className="transition-colors duration-200"
+                            >
+                                <p className={`${key === active ? "text-[#FFE100] font-semibold" : "text-white hover:text-[#FFE100]/70"}`}>
+                                    {key}
+                                </p>
+                            </Link>
+                        )
+                    })}
+                </div>
             </div>
         </div>
-    </div>)
+    )
 }

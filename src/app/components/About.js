@@ -1,6 +1,6 @@
 "use client"
-import {motion, useScroll, useTransform} from "motion/react"
-import {useMemo, useRef} from "react";
+import {motion,} from "motion/react"
+import {useMemo} from "react";
 
 export default function About() {
     const v = useMemo(() => ({
@@ -19,15 +19,11 @@ export default function About() {
         },
     }), []);
 
-    // function useParallax(value, distance) {
-    //     return useTransform(value, [0, 1], [-distance, distance])
-    // }
-    //
-    // const ref = useRef(null)
-    // const {scrollYProgress} = useScroll({target: ref})
-    // const y = useParallax(scrollYProgress, 25)
-
     return (<div className="w-full h-full flex justify-center select-none flex-col">
+        <div className="relative top-0 left-0 w-max h-max flex pr-2">
+            <p className="text-3xl font-bold">m</p>
+            <p className="text-3xl font-light font-">szyszlo</p>
+        </div>
         <div className="w-full h-full flex justify-between items-center">
             <div
                 className="w-2/5 flex flex-col gap-8">
