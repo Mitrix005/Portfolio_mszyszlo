@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
+import {motion} from "motion/react";
 
 export const BackgroundGradientAnimation = ({
                                                 gradientBackgroundStart="rgb(24, 24, 27)",
@@ -77,8 +78,12 @@ export const BackgroundGradientAnimation = ({
     }, []);
 
     return (
-        <div
+        <motion.div
             ref={containerRef}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
             onMouseMove={interactive ? handleMouseMove : undefined}
             className={cn(
                 "h-full w-full rounded-3xl relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
@@ -154,6 +159,6 @@ export const BackgroundGradientAnimation = ({
                         )}></div>
                 )}
             </div>
-        </div>
+        </motion.div>
     );
 };

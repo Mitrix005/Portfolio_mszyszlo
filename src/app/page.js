@@ -1,6 +1,6 @@
-import Skills from "@/app/components/Skills";
 import Menu from "@/app/components/menu/menu";
-import About_Wrapper from "@/app/components/About_Wrapper";
+import About_Wrapper from "@/app/components/About/About_Wrapper";
+import CardsWrapper from "@/app/components/Cards/CardsWrapper";
 
 export default function Home() {
     return (
@@ -10,12 +10,7 @@ export default function Home() {
                 <div className="sticky top-0 z-0 h-screen">
                     <About_Wrapper/>
                 </div>
-                <div className="sticky z-10 bg-zinc-900 h-[250vh]">
-                    <Skills />
-                    <div className="relative z-20 bg-zinc-950 h-[250vh]">
-                        <Skills />
-                    </div>
-                </div>
+                <CardsWrapper />
             </div>
         </div>
     );

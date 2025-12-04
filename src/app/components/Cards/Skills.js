@@ -1,19 +1,12 @@
 "use client"
 
-import {motion, useScroll, useTransform} from "motion/react"
+import {motion} from "motion/react"
 import Image from "next/image";
-import {useMemo, useRef} from "react";
+import {useMemo} from "react";
 
 export default function Skills() {
     const slider_1 = useMemo(() =>  [{name: "HTML", img: "/brand/Html.svg"},{name: "CSS", img: "/brand/Css.svg"}, {name: "JavaSrcipt", img: "/brand/Javascript.svg"}, {name: "React", img: "/brand/react.svg"}, {name: "Next.JS", img: "/brand/Nextjs.svg"}, {name: "Vite", img: "/brand/Vite.svg"}, {name: "Tailwind", img: "/brand/Tailwind_2.svg"}, {name: "Strapi", img: "/brand/Strapi_2.svg"}, {name: "Railway", img: "/brand/Railway.jpeg"}, {name: "Figma", img: "/brand/Figma.svg"}, {name: "Vercel", img: "/brand/Vercel_2.svg"}, {name: "Motion.dev", img: "/brand/Motion_2.svg"}, {name: "RadixUI", img: "/brand/Radix.svg"}], []);
     const skills = useMemo(() => ["S", "K", "I", "L", "L", "S"], []);
-
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start start", "end end"]
-    });
-    const scroll = useTransform(scrollYProgress, [0, 1], [0, -1000]);
 
     const mainContainerVariant = {
         hidden: { opacity: 0 },
@@ -72,9 +65,7 @@ export default function Skills() {
     };
 
     return (
-        <div
-            ref={ref}
-            className="sticky top-0 w-full h-screen flex flex-col px-22 py-12 select-none justify-center perspective-distant overflow-hidden">
+        <div className="sticky top-0 w-full h-screen flex flex-col px-22 py-12 select-none justify-center perspective-distant overflow-hidden rounded-t-3xl">
             <motion.div
                 variants={mainContainerVariant}
                 initial="hidden"
@@ -82,19 +73,19 @@ export default function Skills() {
                 viewport={{ once: true, amount: 0.3 }}
                 className="relative w-full h-full will-change-transform"
             >
-                <motion.div variants={gridAndTitleVariant} className="flex">
+                <motion.div variants={gridAndTitleVariant} className="flex will-change-auto">
                     {skills.map((letter, index) => (
                         <motion.div
                             key={index}
                             variants={letterVariant}
-                            className="font-black text-8xl text-[#FFE100]"
+                            className="font-black text-8xl text-[#FFE100] will-change-auto"
                         >
                             {letter}
                         </motion.div>
                     ))}
                 </motion.div>
 
-                <motion.p variants={textVariant} className="text-zinc-300 font-light text-lgs">
+                <motion.p variants={textVariant} className="text-zinc-300 font-light text-lg">
                     My set of useful skills
                 </motion.p>
 
