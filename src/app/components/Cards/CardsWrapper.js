@@ -1,0 +1,38 @@
+"use client"
+import { motion, useScroll, useTransform } from "motion/react"
+import { useRef } from "react";
+import Skills from "@/app/components/Cards/Skills";
+import Projects from "@/app/components/Cards/Projects";
+
+export default function CardsWrapper() {
+    const containerRef = useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    const x = useTransform(scrollYProgress, [0.3, 1], ["0%", "-100%"]);
+    const scale = useTransform(scrollYProgress,[0.3, 1], ["100%", "70%"]);
+
+    return (
+        <div ref={containerRef} className="relative h-[300vh] bg-zinc-900 rounded-t-3xl">
+            <div className="sticky top-0 h-screen overflow-hidden">
+                <div
+                    className="flex h-full w-[200vw]"
+                >
+                    <motion.div
+                        style={{scale: scale}}
+                        className="relative w-screen h-full flex-shrink-0 bg-zinc-900 z-10 rounded-3xl">
+                        <Skills />
+                    </motion.div>
+                    <motion.div
+                        style={{ x }}
+                        className="relative z-20 w-screen h-full flex-shrink-0 flex items-center justify-center bg-white rounded-l-2xl">
+                        <Projects />
+                    </motion.div>
+                </div>
+            </div>
+        </div>
+    )
+}
