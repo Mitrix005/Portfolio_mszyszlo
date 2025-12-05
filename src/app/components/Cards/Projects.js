@@ -23,6 +23,7 @@ export default function Projects(){
 
     return (
         <motion.div
+            id="projects"
             initial="hidden"
             whileInView="visible"
             variants={containerVariant}

@@ -3,7 +3,7 @@
 import {motion} from "motion/react";
 import {useMemo} from "react";
 
-export default function AboutGraphics() {
+export default function StartGraphics() {
     const v = useMemo(() => ({
         hidden: { pathLength: 0, opacity: 0 },
         visible: {

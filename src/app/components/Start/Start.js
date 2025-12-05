@@ -1,9 +1,9 @@
 "use client"
 import {motion,} from "motion/react"
 import {useMemo} from "react";
-import AboutGraphics from "@/app/components/About/AboutGraphics";
+import StartGraphics from "@/app/components/Start/StartGraphics";
 
-export default function About() {
+export default function Start() {
 
     return (<div className="w-full h-full flex justify-center select-none flex-col">
         <div className="relative top-0 left-0 w-max h-max flex pr-2">
@@ -36,7 +36,7 @@ export default function About() {
             </div>
             <div className="w-1/4 relative h-full min-h-[500px]">
                 <div className="absolute -left-[12em] top-1/2 -translate-y-1/2 w-[100%] pointer-events-none z-0 scale-170">
-                    <AboutGraphics />
+                    <StartGraphics />
                 </div>
             </div>
         </div>
