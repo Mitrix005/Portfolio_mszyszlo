@@ -17,6 +17,10 @@ export default function CardsWrapper() {
 
     return (
         <div ref={containerRef} className="relative h-[300vh] bg-zinc-900 rounded-t-3xl">
+            <div id="skills" className="absolute top-0 w-full h-1 pointer-events-none" />
+
+            <div id="projects" className="absolute top-[70%] w-full h-1 pointer-events-none" />
+
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div
                     className="flex h-full w-[200vw]"

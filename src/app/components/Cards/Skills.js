@@ -64,7 +64,7 @@ export default function Skills() {
     };
 
     return (
-        <div id="skills" className="sticky top-0 w-full h-screen flex flex-col px-22 py-30 select-none justify-center perspective-distant overflow-hidden rounded-t-3xl">
+        <div className="sticky top-0 w-full h-screen flex flex-col px-22 py-30 select-none justify-center perspective-distant overflow-hidden rounded-t-3xl">
             <motion.div
                 variants={mainContainerVariant}
                 initial="hidden"
