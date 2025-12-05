@@ -48,7 +48,6 @@ export default function Skills() {
         }
     };
 
-
     const cardVariant = {
         hidden: { opacity: 0, y: 20 },
         visible: {
@@ -65,64 +64,96 @@ export default function Skills() {
     };
 
     return (
-        <div className="sticky top-0 w-full h-screen flex flex-col px-22 py-12 select-none justify-center perspective-distant overflow-hidden rounded-t-3xl">
+        <div className="sticky top-0 w-full h-screen flex flex-col px-22 py-30 select-none justify-center perspective-distant overflow-hidden rounded-t-3xl">
             <motion.div
                 variants={mainContainerVariant}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                className="relative w-full h-full will-change-transform"
+                className="relative w-full h-full will-change-transform flex gap-30"
             >
-                <motion.div variants={gridAndTitleVariant} className="flex will-change-auto">
-                    {skills.map((letter, index) => (
-                        <motion.div
-                            key={index}
-                            variants={letterVariant}
-                            className="font-black text-8xl text-[#FFE100] will-change-auto"
-                        >
-                            {letter}
-                        </motion.div>
-                    ))}
-                </motion.div>
+                <div className="relative left-0 w-max h-full flex flex-col">
+                    <motion.div variants={gridAndTitleVariant} className="flex will-change-auto">
+                        {skills.map((letter, index) => (
+                            <motion.div
+                                key={index}
+                                variants={letterVariant}
+                                className="font-black text-8xl text-[#FFE100] will-change-auto"
+                            >
+                                {letter}
+                            </motion.div>
+                        ))}
+                    </motion.div>
 
-                <motion.p variants={textVariant} className="text-zinc-300 font-light text-lg">
-                    My set of useful skills
-                </motion.p>
+                    <motion.p variants={textVariant} className="text-zinc-300 font-light text-lg">
+                        My set of useful skills
+                    </motion.p>
+                </div>
 
                 <motion.div
                     variants={gridAndTitleVariant}
-                    className="w-full h-max mt-5 grid col-span-2 gap-3"
-                >
-                    <motion.p variants={textVariant} className="font-black text-lg">
-                        My stack
-                    </motion.p>
+                    className="w-max h-max flex flex-col gap-10">
+                    <motion.div
+                        variants={gridAndTitleVariant}
+                        className="w-full h-full flex flex-col gap-3">
+                        <motion.p variants={textVariant} className="font-semibold tracking-wide text-xl">
+                            TECH STACK
+                        </motion.p>
 
-                    <div className="grid grid-cols-7 gap-3 h-max w-full">
-                        {slider_1.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                variants={cardVariant}
-                                whileHover={hoverAnimation}
-                                className="w-full max-h-20 rounded-lg flex items-center gap-5 p-4 bg-[#4a374a] border border-white/10 shadow-md will-change-transform cursor-pointer"
-                            >
-                                <div className="relative w-1/5 aspect-square p-2">
-                                    <Image
-                                        src={item.img}
-                                        alt={item.name}
-                                        fill
-                                        unoptimized={item.img.endsWith('.svg')}
-                                        className="object-contain"
-                                        sizes="64px"
-                                    />
-                                </div>
-                                <p className="text-md font-medium text-white truncate">{item.name}</p>
-                            </motion.div>
-                        ))}
-                    </div>
+                        <div className="flex flex-wrap gap-3 h-max w-full">
+                            {slider_1.map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    variants={cardVariant}
+                                    whileHover={hoverAnimation}
+                                    className="w-full max-h-18 max-w-50 rounded-lg flex items-center gap-5 p-4 bg-[#4a374a] border border-white/10 shadow-md will-change-transform cursor-pointer"
+                                >
+                                    <div className="relative w-1/5 aspect-square p-2">
+                                        <Image
+                                            src={item.img}
+                                            alt={item.name}
+                                            fill
+                                            unoptimized={item.img.endsWith('.svg')}
+                                            className="object-contain"
+                                            sizes="64px"
+                                        />
+                                    </div>
+                                    <p className="text-md font-medium text-white truncate">{item.name}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        variants={gridAndTitleVariant}
+                        className="w-full h-full flex flex-col gap-3">
+                        <motion.p variants={textVariant} className="font-semibold tracking-wide text-xl">
+                            TECH STACK
+                        </motion.p>
+
+                        <div className="flex flex-wrap gap-3 h-max w-full">
+                            {slider_1.map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    variants={cardVariant}
+                                    whileHover={hoverAnimation}
+                                    className="w-full max-h-18 max-w-50 rounded-lg flex items-center gap-5 p-4 bg-[#4a374a] border border-white/10 shadow-md will-change-transform cursor-pointer"
+                                >
+                                    <div className="relative w-1/5 aspect-square p-2">
+                                        <Image
+                                            src={item.img}
+                                            alt={item.name}
+                                            fill
+                                            unoptimized={item.img.endsWith('.svg')}
+                                            className="object-contain"
+                                            sizes="64px"
+                                        />
+                                    </div>
+                                    <p className="text-md font-medium text-white truncate">{item.name}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
                 </motion.div>
-
-                <div className="flex flex-col justify-center items-center"></div>
-                <div className="flex flex-col justify-center items-center"></div>
             </motion.div>
         </div>
     )
