@@ -12,27 +12,24 @@ export default function CardsWrapper() {
         offset: ["start start", "end end"]
     });
 
-    const x = useTransform(scrollYProgress, [0.3, 1], ["0%", "-100%"]);
+    const x = useTransform(scrollYProgress, [0.3, 0.6], ["0%", "-100%"]);
     const scale = useTransform(scrollYProgress,[0.3, 1], ["100%", "70%"]);
 
     return (
-        <div ref={containerRef} className="relative h-[300vh] bg-zinc-900 rounded-t-3xl">
+        <div ref={containerRef} className="relative h-[400vh] bg-zinc-900 rounded-t-3xl">
             <div id="skills" className="absolute top-0 w-full h-1 pointer-events-none" />
-
             <div id="projects" className="absolute top-[70%] w-full h-1 pointer-events-none" />
 
             <div className="sticky top-0 h-screen overflow-hidden">
-                <div
-                    className="flex h-full w-[200vw]"
-                >
+                <div className="flex h-full w-[200vw]">
                     <motion.div
                         style={{scale: scale}}
-                        className="relative w-screen h-full flex-shrink-0 bg-zinc-900 z-10 rounded-3xl">
+                        className="relative w-screen h-screen flex-shrink-0 bg-zinc-900 z-10 rounded-3xl">
                         <Skills />
                     </motion.div>
                     <motion.div
                         style={{ x }}
-                        className="relative z-20 w-screen h-full flex-shrink-0 flex items-center justify-center bg-white rounded-l-2xl">
+                        className="relative z-20 w-screen h-full flex-shrink-0 flex items-center justify-center">
                         <Projects />
                     </motion.div>
                 </div>

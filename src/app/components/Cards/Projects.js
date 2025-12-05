@@ -27,25 +27,23 @@ export default function Projects(){
             whileInView="visible"
             variants={containerVariant}
             viewport={{ once: false, amount: 0.8 }}
-            className="w-full h-full p-10 pr-12">
-            <motion.div
-                variants={projectsCardsVariant}
-                className="relative bg-[#FFE100] top-0 z-10 w-full h-full flex-col gap-4 rounded-3xl flex items-center justify-center shadow-xl/20">
-                <p className="font-inter text-4xl font-bold text-[#FFE100]">Moje Projekty</p>
-                <p className="text-zinc-300">Coś jakoś..</p>
-            </motion.div>
-            <motion.div
-                variants={projectsCardsVariant}
-                className="relative left-15 bg-blue-300 bottom-[100%] z-20 w-full h-full flex-col gap-4 rounded-3xl flex items-center justify-center shadow-xl/20">
-                <p className="font-inter text-4xl font-bold text-[#FFE100]">Moje Projekty</p>
-                <p className="text-zinc-300">Coś jakoś..</p>
-            </motion.div>
-            <motion.div
-                variants={projectsCardsVariant}
-                className="relative left-30 bg-green-300 bottom-[200%] z-30 w-full h-full flex-col gap-4 rounded-3xl flex items-center justify-center shadow-xl/20">
-                <p className="font-inter text-4xl font-bold text-[#FFE100]">Moje Projekty</p>
-                <p className="text-zinc-300">Coś jakoś..</p>
-            </motion.div>
+            className="w-full h-full p-10 pr-12 bg-white">
+            <div className="relative w-full h-full">
+                <div className="absolute top-0 w-max h-max flex flex-col gap-4">
+                    <p className="font-inter text-5xl font-bold text-yellow-400">My projects</p>
+                    <p className="text-zinc-900 text-sm font-light">Check out what I've made and what i can offer.</p>
+                </div>
+                <div className="w-full h-full flex justify-center items-center px-5 py-10 gap-5">
+                    <div className="w-2/5 h-3/4 flex flex-col justify-between items-end gap-2">
+                        <p className="relative flex-none top-0 text-zinc-600 text-8xl font-medium">#1</p>
+                        <div className="w-full h-max flex flex-col justify-end items-end gap-8">
+                            <h1 className="text-zinc-800 text-5xl/15 font-black text-right">HIGH SCHOOL OF JAN ZAMOYSKI IN ZAMOŚĆ</h1>
+                            <p className="text-zinc-900 text-lg font-medium text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis varius eros, eu fringilla lacus mollis semper. Integer dictum lacinia sapien quis luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas</p>
+                        </div>
+                    </div>
+                    <div className="w-3/5 h-3/4 bg-[#FFE100] rounded-2xl"></div>
+                </div>
+            </div>
         </motion.div>
     )
 }
