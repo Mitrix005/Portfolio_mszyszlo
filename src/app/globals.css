@@ -25,6 +25,10 @@
     animation: move-gradient 5s ease infinite;
 }
 
+.lucide-icon {
+    vector-effect: non-scaling-stroke;
+}
+
 @theme inline {
     --animate-first: moveVertical 30s ease infinite;
     --animate-second: moveInCircle 20s reverse infinite;

@@ -43,7 +43,8 @@ export default function Menu(){
 
         if (value === "#start") {
             lenis.scrollTo(0, {
-                duration: 1.5
+                duration: 1.5,
+                easing: (t) => 1 - Math.pow(1 - t, 3)
             });
             setActive(key);
             return;
@@ -52,8 +53,8 @@ export default function Menu(){
         const element = document.querySelector(value);
         if(element) {
             lenis.scrollTo(value, {
-                offset: 0,
-                duration: 1.5
+                duration: 1.5,
+                easing: (t) => 1 - Math.pow(1 - t, 3)
             });
             setActive(key);
         }

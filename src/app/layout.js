@@ -1,4 +1,5 @@
 import {
+    Cookie,
     Lexend,
     Nunito_Sans,
     Poppins,
@@ -9,13 +10,19 @@ import SmoothScrolling from "@/app/components/functions/SmoothScrolling";
 
 const poppins = Poppins({
     subsets: ['latin', 'latin-ext'],
-    weight: ['300', '400', '500', '600', '700'], // Musisz określić konkretne wagi
+    weight: ['300', '400', '500', '600', '700'],
     variable: '--font-poppins',
 })
 
 const quicksand = Quicksand({
     variable: "--font-quicksand",
     subsets: ["latin"],
+});
+
+const cookie = Cookie({
+    subsets: ['latin', 'latin-ext'],
+    weight: ['400'],
+    variable: '--font-cookie',
 });
 
 const nunitoSans = Nunito_Sans({
@@ -38,7 +45,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pl">
       <body
-        className={`${quicksand.variable} ${nunitoSans.variable} ${poppins.variable} ${lexend.variable} antialiased`}
+        className={`${quicksand.variable} ${nunitoSans.variable} ${poppins.variable} ${lexend.variable} ${cookie.variable} antialiased`}
       >
         <SmoothScrolling>
             {children}

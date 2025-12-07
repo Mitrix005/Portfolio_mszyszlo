@@ -1,7 +1,6 @@
 "use client"
 
 import {motion, AnimatePresence, useMotionValue, useSpring, useTransform} from "motion/react"
-import {useEffect} from "react";
 import Image from "next/image";
 
 export default function Projects({actualProject=0}){
@@ -82,15 +81,15 @@ export default function Projects({actualProject=0}){
     };
 
 
-    const mainContainerVariant = {
-        hidden: { opacity: 0, x: 20 },
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: { duration: 0.5, type: "spring", staggerChildren: 0.2 }
-        },
-        exit: { opacity: 0, x: -20, transition: { duration: 0.3 } }
-    };
+    // const mainContainerVariant = {
+    //     hidden: { opacity: 0, x: 20 },
+    //     visible: {
+    //         opacity: 1,
+    //         x: 0,
+    //         transition: { duration: 0.5, type: "spring", staggerChildren: 0.2 }
+    //     },
+    //     exit: { opacity: 0, x: -20, transition: { duration: 0.3 } }
+    // };
 
     const handleMouseMove = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -120,12 +119,12 @@ export default function Projects({actualProject=0}){
             whileInView="visible"
             variants={containerVariant}
             viewport={{ once: false, amount: 0.3 }}
-            className="w-full h-full p-10 pr-12 bg-neutral-100">
+            className="w-full h-full flex p-10 pr-12 bg-neutral-100">
             <motion.div
                 variants={itemVariant}
                 className="relative w-full h-full">
                 <div className="absolute top-0 w-max h-max flex flex-col gap-3">
-                    <p className="font-inter text-5xl font-bold text-yellow-400">My projects</p>
+                    <p className=" text-5xl font-bold text-yellow-400">My projects</p>
                     <p className="text-zinc-900 text-sm font-light">Check out what I've made and what i can offer.</p>
                 </div>
                 <AnimatePresence mode="wait">

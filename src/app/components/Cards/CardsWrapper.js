@@ -28,13 +28,13 @@ export default function CardsWrapper() {
     return (
         <div ref={containerRef} className="relative h-[400vh] bg-zinc-900 rounded-t-3xl">
             <div id="skills" className="absolute top-0 w-full h-1 pointer-events-none" />
-            <div id="projects" className="absolute top-[40%] w-full h-1 pointer-events-none" />
+            <div id="projects" className="absolute top-[50%] w-full h-1 pointer-events-none" />
 
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="flex h-full w-[200vw]">
                     <motion.div
                         style={{scale: scale}}
-                        className="relative w-screen h-screen flex-shrink-0 bg-zinc-900 z-10 rounded-3xl">
+                        className="relative w-screen h-screen flex-shrink-0 bg-zinc-950 z-10 rounded-3xl">
                         <Skills />
                     </motion.div>
                     <motion.div

@@ -13,7 +13,7 @@ export default function StartWrapper() {
             style={{ opacity, scale }}
             className="w-full h-screen p-10 will-change-[opacity, scale]">
             <BackgroundGradientAnimation>
-                <div className="w-full h-full flex flex-col bg-zinc-900/40 backdrop-blur-lg border border-zinc-700/50 shadow-2xl shadow-black/50 rounded-3xl p-12">
+                <div className="w-full h-full flex flex-col bg-zinc-900/40 backdrop-blur-lg shadow-2xl shadow-black/50 rounded-3xl p-12">
                     <Start />
                 </div>
             </BackgroundGradientAnimation>
