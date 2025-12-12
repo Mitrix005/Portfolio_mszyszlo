@@ -119,13 +119,13 @@ export default function Projects({actualProject=0}){
             whileInView="visible"
             variants={containerVariant}
             viewport={{ once: false, amount: 0.3 }}
-            className="w-full h-full flex p-10 pr-12 bg-neutral-100">
+            className="absolute w-full h-full flex p-5 md:p-10 pt-20 md:pr-12 bg-neutral-100">
             <motion.div
                 variants={itemVariant}
                 className="relative w-full h-full">
-                <div className="absolute top-0 w-max h-max flex flex-col gap-3">
-                    <p className=" text-5xl font-bold text-yellow-400">My projects</p>
-                    <p className="text-zinc-900 text-sm font-light">Check out what I've made and what i can offer.</p>
+                <div className="absolute top-0 w-full h-max flex flex-col items-center gap-1">
+                    <p className=" text-lg font-bold text-yellow-500">Featured projects</p>
+                    <p className="md:flex text-zinc-900 text-xs font-light">Check out what I've made and what i can offer.</p>
                 </div>
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -134,24 +134,24 @@ export default function Projects({actualProject=0}){
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="w-full h-full flex justify-center items-center px-5 py-10 gap-8">
-                        <div className="w-2/5 h-3/4 flex flex-col justify-between items-end gap-2">
+                        className="w-full h-full flex flex-col-reverse justify-center items-center gap-8 pt-15 pb-5">
+                        <div className="w-full h-max flex flex-col justify-between md:items-end">
                             <motion.p
                                 variants={itemVariant}
-                                className="relative flex-none top-0 text-zinc-600 text-8xl font-medium">#{actualProject+1}</motion.p>
-                            <div className="w-full h-max flex flex-col justify-end items-end gap-4">
+                                className="relative flex-none top-0 text-zinc-600 text-xl font-medium">#{actualProject+1}</motion.p>
+                            <div className="w-full h-max flex flex-col justify-end md:items-end gap-2">
                                 <motion.h1
                                     variants={itemVariant}
-                                    className="text-zinc-600 text-5xl/16 font-black text-right">{projectData.name}</motion.h1>
+                                    className="text-zinc-600 text-lg md:text-3xl/16 font-black md:text-right">{projectData.name}</motion.h1>
                                 <motion.p
                                     variants={itemVariant}
-                                    className="text-zinc-900 text-lg font-medium text-right">{projectData.description}</motion.p>
+                                    className="text-zinc-900 text-xs font-medium md:text-right">{projectData.description}</motion.p>
                             </div>
                         </div>
                         <motion.div
-                            className={`w-3/5 h-3/4 flex flex-col justify-end rounded-2xl shadow-xl/30 ${projectData.color} overflow-hidden relative border border-zinc-300`}
+                            className={`w-full h-full flex flex-col justify-end rounded-2xl shadow-xl/30 ${projectData.color} overflow-hidden relative border border-zinc-300`}
                             whileHover={{scale: 1.01, transition:{
-                                duration: 0.2,
+                                    duration: 0.2,
                                 }}}
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
@@ -161,12 +161,12 @@ export default function Projects({actualProject=0}){
                                 transformStyle: "preserve-3d"
                             }}
                         >
-                            {projectData?.image ? <div className="absolute top-0 left-0 w-full h-full">
-                                <Image src={projectData.image} alt={projectData.name} fill className="object-cover" />
+                            {projectData?.image ? <div className="block md:absolute top-0 left-0 h-max">
+                                <Image src={projectData.image} alt={projectData.name} fill className="object-contain h-max w-full" />
                             </div> : null}
-                            <div className="relative z-10 w-full h-12 bg-neutral-300 rounded-b-2xl flex items-center justify-center px-4">
+                            <div className="relative z-10 w-full h-8 md:h-12 bg-neutral-300 rounded-b-2xl flex items-center justify-center px-4">
                                 <div className="w-max h-max bg-white rounded-2xl flex items-center pl-3 pr-6 py-1">
-                                    <p className="text-sm text-zinc-800">{projectData.link}</p>
+                                    <p className="text-xs text-zinc-800">{projectData.link}</p>
                                 </div>
                             </div>
                         </motion.div>

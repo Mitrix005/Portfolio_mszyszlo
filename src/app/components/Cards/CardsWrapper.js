@@ -1,8 +1,8 @@
 "use client"
 import { motion, useScroll, useTransform, useMotionValueEvent } from "motion/react"
 import {useRef, useState} from "react";
-import Skills from "@/app/components/Cards/Skills";
 import Projects from "@/app/components/Cards/Projects";
+import SkillsNew from "@/app/components/Cards/Skills-new";
 
 export default function CardsWrapper() {
     const containerRef = useRef(null);
@@ -34,8 +34,8 @@ export default function CardsWrapper() {
                 <div className="flex h-full w-[200vw]">
                     <motion.div
                         style={{scale: scale}}
-                        className="relative w-screen h-screen flex-shrink-0 bg-zinc-950 z-10 rounded-3xl">
-                        <Skills />
+                        className="relative w-screen h-screen flex-shrink-0 bg-zinc-800 z-10 rounded-3xl">
+                        <SkillsNew />
                     </motion.div>
                     <motion.div
                         style={{ x }}

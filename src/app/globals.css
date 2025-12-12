@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+    scroll-snap-type: y mandatory;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }

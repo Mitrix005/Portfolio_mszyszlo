@@ -93,7 +93,6 @@ export default function Skills() {
             <motion.div
                 whileHover={{
                     y: -5,
-                    scale: 1.01,
                     transition: { type: "spring", stiffness: 300, damping: 25 }
                 }}
                 className={`relative overflow-hidden bg-[#080808] border border-white/10 rounded-3xl ${className} group`}
@@ -118,7 +117,7 @@ export default function Skills() {
     };
 
     return (
-        <div className="sticky top-0 w-full h-screen flex flex-col px-40 py-30 pb-22 pr-52 select-none justify-center overflow-hidden rounded-t-3xl">
+        <div className="sticky top-0 w-full h-screen flex flex-col select-none justify-center overflow-hidden rounded-t-3xl pt-30 p-20 pr-22 ">
             <motion.div
                 variants={mainContainerVariant}
                 initial="hidden"
