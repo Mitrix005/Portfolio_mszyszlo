@@ -1,8 +1,5 @@
 import {
-    Arimo,
-    Cookie, Inter,
-    Lexend, Montserrat,
-    Nunito_Sans,
+    Lexend,
     Poppins,
     Quicksand, Raleway
 } from "next/font/google";
@@ -20,11 +17,6 @@ const quicksand = Quicksand({
     subsets: ["latin"],
 });
 
-const nunitoSans = Nunito_Sans({
-    variable: "--font-nunito_sans",
-    subsets: ["latin"],
-});
-
 const lexend = Lexend({
     variable: "--font-lexend",
     subsets: ["latin"],
@@ -34,21 +26,10 @@ const raleway = Raleway({
     variable: "--font-raleway",
     subsets: ["latin"],
 });
-const montserrat = Montserrat({
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
-const inter = Inter({
-    variable: "--font-inter",
-    subsets: ["latin"],
-});
-const arimo = Arimo({
-    variable: "--font-arimo",
-    subsets: ["latin"],
-});
+
 
 export const metadata = {
-  title: "Portfolio - Michał Szyszło",
+  title: "Michał Szyszło - Web Developer",
   description: "Portfolio stworzone przez Michała Szyszło",
 };
 
@@ -56,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pl">
       <body
-        className={`${quicksand.variable} ${nunitoSans.variable} ${poppins.variable} ${lexend.variable} ${arimo.variable} ${montserrat.variable} ${inter.variable} ${raleway.variable} antialiased`}
+        className={`${quicksand.variable} ${poppins.variable} ${lexend.variable} ${raleway.variable} antialiased`}
       >
         <SmoothScrolling>
             {children}

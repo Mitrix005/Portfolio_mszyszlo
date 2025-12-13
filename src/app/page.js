@@ -2,6 +2,7 @@ import Menu from "@/app/components/menu/menu";
 import StartWrapper from "@/app/components/Start/StartWrapper";
 import CardsWrapper from "@/app/components/Cards/CardsWrapper";
 import About from "@/app/components/About/About";
+import Footer from "@/app/components/Footer/Footer";
 
 const Section = ({ children }) => (
     <div className="w-full flex flex-col items-center">
@@ -21,6 +22,9 @@ export default function Home() {
             <CardsWrapper />
             <Section>
                 <About />
+            </Section>
+            <Section>
+                <Footer />
             </Section>
         </div>
     );

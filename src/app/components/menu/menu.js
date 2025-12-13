@@ -61,7 +61,7 @@ export default function Menu(){
     }
 
     return (
-        <div className="fixed top-5 left-1/2 -translate-x-1/2 z-[100] w-full h-max flex justify-center gap-2 px-22">
+        <div className="fixed top-5 left-1/2 -translate-x-1/2 z-[100] w-full h-max flex justify-center gap-2 px-22 select-none">
             <div className="w-max h-max flex justify-between items-center py-3 px-6 bg-zinc-700/60 backdrop-blur-md rounded-full border border-zinc-700/50 shadow-lg">
                 <div className="w-max h-max font-[raleway] flex font-light text-sm gap-6">
                     {menu_items.map((item) => {

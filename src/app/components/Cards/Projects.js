@@ -2,6 +2,8 @@
 
 import {motion, AnimatePresence, useMotionValue, useSpring, useTransform} from "motion/react"
 import Image from "next/image";
+import { ArrowUpLeft } from 'lucide-react';
+import Link from "next/link";
 
 export default function Projects({actualProject=0}){
 
@@ -13,7 +15,6 @@ export default function Projects({actualProject=0}){
 
     const rotateX = useTransform(ySpring, [-0.5, 0.5], ["9deg", "-9deg"]);
     const rotateY = useTransform(xSpring, [-0.5, 0.5], ["-9deg", "9deg"]);
-
 
     const containerVariant = {
         hidden: { opacity: 0 },
@@ -38,9 +39,9 @@ export default function Projects({actualProject=0}){
     const projects = [
         {
             name: "HIGH SCHOOL OF JAN ZAMOYSKI IN ZAMOŚĆ",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis varius eros, eu fringilla lacus mollis semper. " +
-                "Integer dictum lacinia sapien quis luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas",
+            description: "A modern digital website for the Jan Zamoyski High School in Zamość. It integrates a sleek student portal with a streamlined content management system, enabling staff to effortlessly publish news, manage photo galleries, and update schedules.",
             preview: "",
+            githubLink: "https://github.com/snappifier/NextLo",
             color: "bg-[#FFR100]",
             image: "/previews/1lo-preview.png",
             link: "https://next-lo-ten.vercel.app"
@@ -50,8 +51,9 @@ export default function Projects({actualProject=0}){
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis varius eros, eu fringilla lacus mollis semper. " +
                 "Integer dictum lacinia sapien quis luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas",
             preview: "",
+            githubLink: "https://github.com/Mitrix005/Portfolio_mszyszlo",
             color: "bg-[#064e3b]",
-            link: "https://next-lo-ten.vercel.app"
+            link: "https://mszyszlo.vercel.app"
         },
         {
             name: "COMMING SOON",
@@ -80,17 +82,6 @@ export default function Projects({actualProject=0}){
         }
     };
 
-
-    // const mainContainerVariant = {
-    //     hidden: { opacity: 0, x: 20 },
-    //     visible: {
-    //         opacity: 1,
-    //         x: 0,
-    //         transition: { duration: 0.5, type: "spring", staggerChildren: 0.2 }
-    //     },
-    //     exit: { opacity: 0, x: -20, transition: { duration: 0.3 } }
-    // };
-
     const handleMouseMove = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
 
@@ -112,20 +103,19 @@ export default function Projects({actualProject=0}){
         y.set(0);
     }
 
-
     return (
         <motion.div
             initial="hidden"
             whileInView="visible"
             variants={containerVariant}
-            viewport={{ once: false, amount: 0.3 }}
-            className="absolute w-full h-full flex p-5 md:p-10 pt-20 md:pr-12 bg-neutral-100">
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative w-full min-h-screen flex pt-15 md:pt-40 md:pb-32 px-5 md:px-20 bg-neutral-100 overflow-x-hidden">
             <motion.div
                 variants={itemVariant}
-                className="relative w-full h-full">
-                <div className="absolute top-0 w-full h-max flex flex-col items-center gap-1">
-                    <p className=" text-lg font-bold text-yellow-500">Featured projects</p>
-                    <p className="md:flex text-zinc-900 text-xs font-light">Check out what I've made and what i can offer.</p>
+                className="relative w-full h-full flex flex-col items-center gap-5 py-5">
+                <div className="w-full h-max flex flex-col items-center gap-1 z-30">
+                    <p className="text-lg md:text-3xl font-bold text-yellow-500">Featured projects</p>
+                    <p className="md:flex text-zinc-900 text-xs md:text-sm font-light">Check out what I've made and what i can offer.</p>
                 </div>
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -134,22 +124,28 @@ export default function Projects({actualProject=0}){
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="w-full h-full flex flex-col-reverse justify-center items-center gap-8 pt-15 pb-5">
-                        <div className="w-full h-max flex flex-col justify-between md:items-end">
+                        className="w-full flex flex-col-reverse md:flex-row items-center gap-5 md:gap-15 md:py-10">
+
+                        <div className="w-full md:w-max h-max flex flex-col gap-2 md:items-end z-20 pointer-events-none md:pointer-events-auto">
                             <motion.p
                                 variants={itemVariant}
-                                className="relative flex-none top-0 text-zinc-600 text-xl font-medium">#{actualProject+1}</motion.p>
-                            <div className="w-full h-max flex flex-col justify-end md:items-end gap-2">
+                                className="relative md:flex-none top-0 text-zinc-600 text-3xl md:text-6xl font-medium">#{actualProject+1}</motion.p>
+                            <div className="w-full h-max flex flex-col justify-end md:items-end gap-3 md:gap-5">
                                 <motion.h1
                                     variants={itemVariant}
-                                    className="text-zinc-600 text-lg md:text-3xl/16 font-black md:text-right">{projectData.name}</motion.h1>
+                                    className="md:w-full text-zinc-600 text-lg md:text-5xl/16 font-black md:text-right">{projectData.name}</motion.h1>
                                 <motion.p
                                     variants={itemVariant}
-                                    className="text-zinc-900 text-xs font-medium md:text-right">{projectData.description}</motion.p>
+                                    className="md:w-full text-zinc-900 text-xs md:text-sm font-medium md:text-right">{projectData.description}</motion.p>
+                                <div className="w-1/3 h-0.5 bg-zinc-800"></div>
+                                <Link
+                                    href={projectData?.githubLink ? projectData.githubLink : ""}
+                                    className="w-max flex gap-2 items-center text-zinc-600 text-lg md:text-xl font-semibold md:text-right pointer-events-auto cursor-pointer">See project on Github<ArrowUpLeft /></Link>
                             </div>
                         </div>
+
                         <motion.div
-                            className={`w-full h-full flex flex-col justify-end rounded-2xl shadow-xl/30 ${projectData.color} overflow-hidden relative border border-zinc-300`}
+                            className={`z-10 aspect-square xl:aspect-video w-full md:max-w-3/5 flex-shrink-0 flex flex-col rounded-2xl shadow-xl/30 bg-white`}
                             whileHover={{scale: 1.01, transition:{
                                     duration: 0.2,
                                 }}}
@@ -161,13 +157,19 @@ export default function Projects({actualProject=0}){
                                 transformStyle: "preserve-3d"
                             }}
                         >
-                            {projectData?.image ? <div className="block md:absolute top-0 left-0 h-max">
-                                <Image src={projectData.image} alt={projectData.name} fill className="object-contain h-max w-full" />
-                            </div> : null}
-                            <div className="relative z-10 w-full h-8 md:h-12 bg-neutral-300 rounded-b-2xl flex items-center justify-center px-4">
-                                <div className="w-max h-max bg-white rounded-2xl flex items-center pl-3 pr-6 py-1">
-                                    <p className="text-xs text-zinc-800">{projectData.link}</p>
-                                </div>
+                            <div className={`relative flex-1 w-full overflow-hidden rounded-t-2xl border-t border-x ${projectData.color}`}>
+                                {projectData?.image ? (
+                                    <Image
+                                        src={projectData.image}
+                                        alt={projectData.name}
+                                        fill
+                                        className="object-cover object-top"
+                                    />
+                                ) : null}
+                            </div>
+
+                            <div className="relative z-10 w-full h-10 md:h-12 bg-neutral-100 border border-zinc-300 rounded-b-2xl flex items-center px-4">
+                                <Link href={projectData.link} className="border border-neutral-400 p-1 px-4 rounded-3xl font-light md:text-xs text-zinc-800 truncate select-none"><p className="font-medium text-sm">{projectData.link}</p></Link>
                             </div>
                         </motion.div>
                     </motion.div>
