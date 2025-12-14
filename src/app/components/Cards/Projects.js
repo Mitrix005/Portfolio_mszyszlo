@@ -124,9 +124,9 @@ export default function Projects({actualProject=0}){
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="w-full flex flex-col-reverse md:flex-row items-center gap-5 md:gap-15 md:py-10">
+                        className="w-full flex flex-col-reverse md:flex-row gap-5 md:gap-15 md:py-10">
 
-                        <div className="w-full md:w-max h-max flex flex-col gap-2 md:items-end z-20 pointer-events-none md:pointer-events-auto">
+                        <div className="relative w-full md:w-2/5 h-auto flex flex-col md:items-end justify-between z-20">
                             <motion.p
                                 variants={itemVariant}
                                 className="relative md:flex-none top-0 text-zinc-600 text-3xl md:text-6xl font-medium">#{actualProject+1}</motion.p>
