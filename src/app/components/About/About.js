@@ -62,9 +62,9 @@ export default function About() {
                             initial="hidden"
                             whileInView="visible"
                             custom={2}
-                            className="text-sm"
+                            className="text-md lg:text-md"
                         >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate auctor dolor, sollicitudin mollis lectus faucibus sed. Cras sed lectus eget justo laoreet convallis at vitae velit. Donec risus leo, porta sit amet justo a, lacinia consectetur tellus. Cras vestibulum congue pellentesque. Curabitur dignissim gravida elit.
+                            I am a second-year <span className="font-bold text-yellow-400">Automatics and Robotics</span> student at <span className="font-bold text-yellow-400">AGH University</span> in Kraków. While engineering is my main focus, I am passionate about expanding my skills in Web Development. I have a solid grasp of backend technologies and I am currently building interfaces using React.
                         </motion.p>
                     </div>
                     <motion.div
@@ -87,7 +87,7 @@ export default function About() {
                         className="relative w-2/3 md:w-1/4 aspect-[1/2] max-h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-zinc-200/20"
                     >
                         <Image
-                            src={"/foto.jpg"}
+                            src={"/foto1.jpg"}
                             alt={"Foto"}
                             fill
                             className="object-cover"
